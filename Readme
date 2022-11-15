@@ -3,6 +3,10 @@ Database Manager :
 Database Manager is a web API which collects data from user 
 and stores into the mentioned database.
 
+s#Logging and debuging 
+#Exceptional Handling
+#Using class and packages
+
 Tech stack used :
 
 ui : html/css/postman
