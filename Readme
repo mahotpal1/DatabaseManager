@@ -3,7 +3,7 @@ Database Manager :
 Database Manager is a web API which collects data from user 
 and stores into the mentioned database.
 
-s#Logging and debuging 
+#Logging and debuging 
 #Exceptional Handling
 #Using class and packages
 
@@ -12,5 +12,6 @@ Tech stack used :
 ui : html/css/postman
 backend : Python3(flask)
 database : mysql/cassandra/mongodb
+for hosting : heroku
 
 Start date : 14-11-2022
