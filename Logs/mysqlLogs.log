@@ -1,0 +1,10 @@
+4332-DEBUG-15-Nov-22 23:23:37-Trying to establish db connection...
+4332-DEBUG-15-Nov-22 23:23:37-# _do_auth(): user: mahotpal1
+4332-DEBUG-15-Nov-22 23:23:37-# _do_auth(): self._auth_plugin: 
+4332-DEBUG-15-Nov-22 23:23:37-# _do_auth(): user: mahotpal1
+4332-DEBUG-15-Nov-22 23:23:37-# _do_auth(): password: Abc@12345
+4332-INFO-15-Nov-22 23:23:37-package: mysql.connector.plugins
+4332-INFO-15-Nov-22 23:23:37-plugin_name: caching_sha2_password
+4332-INFO-15-Nov-22 23:23:37-AUTHENTICATION_PLUGIN_CLASS: MySQLCachingSHA2PasswordAuthPlugin
+4332-DEBUG-15-Nov-22 23:23:37-new_auth_plugin: caching_sha2_password
+4332-INFO-15-Nov-22 23:23:37-Database connection established!
