@@ -21,13 +21,16 @@ class mySql :
         cursor.execute(query)
       except Exception as E :
         lg.warning('Please check query ')
-        lg.error(str(E))   
+        lg.error(str(E))
+        return 'Error Caught, Reach out to TAC'   
     except Exception as e :
       mydb.close()
       lg.error('Database Connection failed!')
       lg.error(str(e))
+      return 'Error Caught, Reach out to TAC'
     else:
       mydb.close()
+      return 'Table Created Successfully!!'
   
   def insertSingleData(self,table_name,data):
     lg.info('Executing insertSingleData!!!!')
@@ -42,10 +45,15 @@ class mySql :
         mydb.commit()
       except Exception as E :
         lg.error(str(E))
+        return 'Error Caught, Reach out to TAC'
     except Exception as e :
       lg.error(str(e))
       mydb.close()
-    
+      return 'Error Caught, Reach out to TAC'
+    else:
+      mydb.close()
+      return 'Data Inserted Successfully!!!!'
+
   def updateData(self, table_name, update_statement):
     lg.info('Executing update Table!')
     try :
@@ -60,9 +68,14 @@ class mySql :
         mydb.commit()
       except Exception as E :
         lg.error(str(E))
+        return 'Error Caught, Reach out to TAC'
     except Exception as e :
       lg.error(str(e))
       mydb.close()
+      return 'Error Caught, Reach out to TAC'
+    else:
+      mydb.close()
+      return 'Updated Data Successfully!!!'
 
   def bulkInsertion(self, table_name, dataList) :
     lg.info('Executing bulk Insertion!!!')
@@ -78,9 +91,13 @@ class mySql :
           mydb.commit() 
       except Exception as E : 
         lg.error(str(E))
+        return 'Error Caught, Reach out to TAC'
     except Exception as e :
       lg.error(str(e))
       mydb.close()
+      return 'Error Caught, Reach out to TAC'
+    else:
+      return 'Added All Data!!'
 
   def __str__(self):
     return "mySql operation completed. Check log files for details."
