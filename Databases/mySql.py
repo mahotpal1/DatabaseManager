@@ -77,6 +77,27 @@ class mySql :
       mydb.close()
       return 'Updated Data Successfully!!!'
 
+  def delete_from_table(self, table_name, query):
+    lg.info('Executing Delete from table!!!')
+    try :
+      mydb = conn.Connect(host="localhost", database=self.db_name, user="mahotpal1", passwd="Abc@12345")
+      if(mydb.is_connected):
+        lg.info('Database Connection Established!!!')
+      try :
+        q="delete from "+table_name+" "+query
+        cursor = mydb.cursor()
+        cursor.execute(q)
+        mydb.commit() 
+      except Exception as E : 
+        lg.error(str(E))
+        return 'Error Caught, Reach out to TAC'
+    except Exception as e :
+      lg.error(str(e))
+      mydb.close()
+      return 'Error Caught, Reach out to TAC'
+    else:
+      return 'Data Deleted SuccessFully!!'
+
   def bulkInsertion(self, table_name, dataList) :
     lg.info('Executing bulk Insertion!!!')
     try :

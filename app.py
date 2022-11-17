@@ -20,7 +20,9 @@ def execute_query_mysql():
       result = obj1.updateData(tableName, query)
     elif (operation=='bulkInsertion'):
       dataList = list(query)
-      result = obj1.bulkInsertion(tableName, dataList)      
+      result = obj1.bulkInsertion(tableName, dataList)  
+    elif (operation=='deletefromTable') :
+      result = obj1.delete_from_table(tableName,query)    
     else:
       result = 'Incorrect Operation'
   
