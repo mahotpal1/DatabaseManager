@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DatabaseManager</title>
+    <link
+      rel="shortcut icon"
+      href="{{ url_for('static', filename='imgs/homeicon.ico') }}"
+    />
+  </head>
+  <header>
+    <h3>Database Manager</h3>
+  </header>
+  <hr />
+  <div>
+    <form action="/gotodatabase" method="POST">
+      <fieldset>
+        <legend>Select the type of Database:</legend>
+        <select name="select_db">
+          <option value="mysql">Mysql</option>
+          <option value="mongodb">Mongodb</option>
+          <option value="cassandra">Cassandra</option>
+        </select>
+        <input type="submit" value="submit" />
+      </fieldset>
+    </form>
+  </div>
+</html>

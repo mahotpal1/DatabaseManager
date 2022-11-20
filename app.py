@@ -1,7 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from Databases.mySql import mySql
 
 app = Flask(__name__)
+
+@app.route('/', methods=['POST','GET'])
+def home_page():
+  return render_template('home.html')
+
+@app.route('/gotodatabase', methods=['POST'])
+def goToDatabase():
+  if(request.method=='POST'):
+    database_name = request.form['select_db']
+  return render_template('databases.html',db_name=database_name)
 
 @app.route('/mysqlPostman', methods=['POST'])
 def execute_query_mysql():
