@@ -2,8 +2,26 @@
 <html>
   <head>
     <title>My Database {{db_name}}</title>
+    <meta charset="UTF-8" />
+    <link
+      rel="icon"
+      href="{{url_for('static', filename='imgs/homeicon.ico')}}"
+    />
   </head>
   <body>
-    <h1>{{db_name}}</h1>
+    <h1>{{db_name}} Database Operations:</h1>
+    <form action="/performOperation" method="POST">
+      <fieldset>
+        <legend>Proceed to Perform {{db_name}} Operations</legend>
+        <input
+          type="text"
+          id="db_name"
+          name="db_name"
+          value="Database : {{db_name}}"
+          readonly
+        />
+        <input type="submit" value="Execute Querry!" />
+      </fieldset>
+    </form>
   </body>
 </html>

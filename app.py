@@ -11,7 +11,14 @@ def home_page():
 def goToDatabase():
   if(request.method=='POST'):
     database_name = request.form['select_db']
-  return render_template('databases.html',db_name=database_name)
+    db_name = str(database_name)
+  return render_template('databases.html', db_name=db_name)
+
+@app.route('/performOperation', methods=['POST'])
+def performOperations():
+  if (request.method == 'POST'):
+    
+    return render_template('operations.html')
 
 @app.route('/mysqlPostman', methods=['POST'])
 def execute_query_mysql():
@@ -39,4 +46,4 @@ def execute_query_mysql():
   return jsonify(result)
 
 if __name__=='__main__':
-  app.run()
+  app.run(debug=True)
